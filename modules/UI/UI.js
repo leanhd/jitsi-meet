@@ -1326,6 +1326,9 @@ UI.setCameraButtonEnabled = enabled => Toolbar.setVideoIconEnabled(enabled);
 UI.setMicrophoneButtonEnabled = enabled => Toolbar.setAudioIconEnabled(enabled);
 
 UI.showRingOverlay = function () {
+    if(interfaceConfig.disableRingOverlay) {
+        return;
+    }
     RingOverlay.show(APP.tokenData.callee, interfaceConfig.DISABLE_RINGING);
     FilmStrip.toggleFilmStrip(false, false);
 };
